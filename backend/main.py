@@ -77,7 +77,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 MODEL_PATH = Path(os.getenv("MODEL_PATH", str(ML_DIR / "best_model.joblib")))
 ALLOWLIST_PATH = Path(os.getenv("ALLOWLIST_PATH", str(BASE_DIR / "allowlist.txt")))
 ALLOWED_ORIGINS = [o.strip() for o in os.getenv(
-    "ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:5173").split(",") if o.strip()]
+    "ALLOWED_ORIGINS", "*").split(",") if o.strip()]
 RATE_LIMIT = int(os.getenv("RATE_LIMIT_PER_MIN", "60"))
 TRUST_PROXY = os.getenv("TRUST_PROXY", "0") == "1"
 LOG_URLS = os.getenv("LOG_URLS", "0") == "1"
